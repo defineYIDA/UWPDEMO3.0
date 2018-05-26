@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="UWPDemo.Views.RegisterPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWPDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm1="using:UWPDemo.ViewModels"
+    mc:Ignorable="d">
+    <Page.DataContext>
+        <vm1:RegisterViewModel x:Name="ViewModel"/>
+    </Page.DataContext>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Grid.ColumnSpan="1" Margin="0, 0, 0, 20" FontFamily="MV Boli" >
+            <Run FontSize="72" Text="Register"/>
+        </TextBlock>
+        <TextBlock Text="UserName:" Grid.Row="1"  Grid.Column="0" FontSize="36" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="MV Boli" />
+        <TextBlock Text="Password:"  Grid.Row="2" Grid.Column="0" FontSize="36" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="MV Boli"/>
+        <Button Grid.Row="5" Grid.Column="1" Content="Back" Click="{x:Bind ViewModel.Back_Click}"  FontSize="36" Margin="0,0,0,0" FontFamily="MV Boli" />
+        <Button Grid.Row="5" Grid.Column="1" Content="Register" Click="{x:Bind ViewModel.Register_Click}" FontSize="32" Margin="340,0,0,0" RenderTransformOrigin="0.509,0.509" FontFamily="MV Boli" />
+        <TextBlock Text="Confirm:" Grid.Row="4" Grid.Column="0" FontSize="36" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="MV Boli"/>
+        <PasswordBox Grid.Row="4" Grid.Column="1" Margin="30,30,0,30" FontSize="50" HorizontalAlignment="Left" Width="540" />
+        <TextBox Grid.Column="1" Margin="30,30,0,30" Grid.Row="1" TextWrapping="Wrap" Text="" RenderTransformOrigin="0.5,0.4" HorizontalAlignment="Left" Width="540" FontFamily="MV Boli" FontSize="36"/>
+        <PasswordBox Grid.Column="1" Margin="30,30,0,30" Grid.Row="2" FontSize="50" HorizontalAlignment="Left" Width="540"/>
+    </Grid>
+</Page>
