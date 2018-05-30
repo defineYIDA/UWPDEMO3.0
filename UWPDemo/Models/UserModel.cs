@@ -4,14 +4,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-namespace UWPDemo.Model
+
+namespace UWPDemo.Models
 {
     //用户表
     [Table("User")]
     public class User
     {
         private int id;
-        private string name;
+        private string username;
         private string password;
         [PrimaryKey, AutoIncrement][NotNull]
         public int Id
@@ -19,12 +20,12 @@ namespace UWPDemo.Model
             get => id;
             set => id = value;
         }
-        public string Name
+        public string Username
         {
-            get => name;
+            get => username;
             set
             {
-                name = value;
+                username = value;
             }
         }
         public string Password

@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using UWPDemo.Model;
+using UWPDemo.Models;
 
 namespace UWPDemo
 {
@@ -32,6 +32,7 @@ namespace UWPDemo
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            DBHelper.InitDB("UWPDemo.db");
             
         }
 

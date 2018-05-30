@@ -25,7 +25,7 @@
             <ColumnDefinition Width="3*" />
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Grid.ColumnSpan="1" Margin="0, 0, 0, 20" FontFamily="MV Boli" >
+        <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Grid.ColumnSpan="1" Margin="0, 0, 0, 20" FontFamily="Segoe UI Emoji" >
             <Run FontSize="72" Text="Register"/>
         </TextBlock>
         <TextBlock Text="UserName:" Grid.Row="1"  Grid.Column="0" FontSize="36" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="MV Boli" />
@@ -33,8 +33,19 @@
         <Button Grid.Row="5" Grid.Column="1" Content="Back" Click="{x:Bind ViewModel.Back_Click}"  FontSize="36" Margin="0,0,0,0" FontFamily="MV Boli" />
         <Button Grid.Row="5" Grid.Column="1" Content="Register" Click="{x:Bind ViewModel.Register_Click}" FontSize="32" Margin="340,0,0,0" RenderTransformOrigin="0.509,0.509" FontFamily="MV Boli" />
         <TextBlock Text="Confirm:" Grid.Row="4" Grid.Column="0" FontSize="36" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="MV Boli"/>
-        <PasswordBox Grid.Row="4" Grid.Column="1" Margin="30,30,0,30" FontSize="50" HorizontalAlignment="Left" Width="540" />
-        <TextBox Grid.Column="1" Margin="30,30,0,30" Grid.Row="1" TextWrapping="Wrap" Text="" RenderTransformOrigin="0.5,0.4" HorizontalAlignment="Left" Width="540" FontFamily="MV Boli" FontSize="36"/>
-        <PasswordBox Grid.Column="1" Margin="30,30,0,30" Grid.Row="2" FontSize="50" HorizontalAlignment="Left" Width="540"/>
+        <PasswordBox Grid.Row="4" Grid.Column="1" Margin="30,30,0,30" Name="Confirm" Password="{Binding Confirm, Mode=TwoWay}" FontSize="50" HorizontalAlignment="Left" Width="540" />
+        <TextBox Grid.Column="1" Margin="30,30,0,30" Grid.Row="1" Name="Username" Text="{Binding Username, Mode=TwoWay}" TextWrapping="Wrap"  RenderTransformOrigin="0.5,0.4" HorizontalAlignment="Left" Width="540" FontFamily="MV Boli" FontSize="36"/>
+        <PasswordBox Grid.Column="1" Margin="30,30,0,30" Grid.Row="2" Name="Password" Password="{Binding Password, Mode=TwoWay}" FontSize="50" HorizontalAlignment="Left" Width="540"/>
+        <ContentDialog x:Name="termsOfUseContentDialog" PrimaryButtonText="Accept"
+                           SecondaryButtonText="Cancel" HorizontalAlignment="Center" VerticalAlignment="Stretch" Grid.Column="1" Margin="161,0,159,85" Grid.RowSpan="2" Width="210" Grid.Row="1" Title="提示：">
+            <ContentDialog.TitleTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="提示：" FontSize="24" FontWeight="Bold"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ContentDialog.TitleTemplate>
+            <TextBlock Name="Dialog_TextBlock" HorizontalAlignment="Left" Height="31" Margin="30,17,0,-5" TextWrapping="Wrap"  VerticalAlignment="Top" Width="195" FontSize="22"/>
+        </ContentDialog>
     </Grid>
 </Page>
